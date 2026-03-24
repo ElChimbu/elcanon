@@ -1,5 +1,6 @@
-import logoImg from '../../assets/f9273fcf9bcbf47e14006f346fe2e50896bc434b.png';
+import logoImg from '../../assets/logo.png';
 import { Instagram, Facebook, MapPin, Phone } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export function Footer() {
   return (
@@ -8,11 +9,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-1">
-            <img 
-              src={logoImg} 
-              alt="El Cañón Logo" 
-              className="h-20 w-auto mb-6 bg-white/90 p-2 rounded-lg object-contain"
-            />
+            <div className="inline-block bg-[#F4EFE6] rounded-xl p-3 mb-6 shadow-md">
+              <img 
+                src={logoImg} 
+                alt="El Cañón Logo" 
+                className="h-16 w-auto object-contain"
+              />
+            </div>
             <p className="text-sm leading-relaxed opacity-90 text-[#E8E1D3]">
               Tradición, calidad y sabor en cada bocado. Panadería y confitería artesanal con más de 3 sucursales para estar siempre cerca tuyo.
             </p>
@@ -20,7 +23,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 uppercase text-[#FDFBF7] tracking-wider border-b border-[#4A4743] pb-2 inline-block">Secciones</h3>
+            <h3 className="font-serif text-base font-semibold mb-4 uppercase text-[#FDFBF7] tracking-wider border-b border-[#4A4743] pb-2 inline-block">Secciones</h3>
             <ul className="space-y-3">
               <li><a href="#productos" className="hover:text-[#008C45] transition-colors">Nuestros Productos</a></li>
               <li><a href="#catering" className="hover:text-[#008C45] transition-colors">Servicio de Lunch</a></li>
@@ -31,7 +34,7 @@ export function Footer() {
 
           {/* Contact & Branches */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-lg font-bold mb-4 uppercase text-[#FDFBF7] tracking-wider border-b border-[#4A4743] pb-2 inline-block">Contacto y Ubicaciones</h3>
+            <h3 className="font-serif text-base font-semibold mb-4 uppercase text-[#FDFBF7] tracking-wider border-b border-[#4A4743] pb-2 inline-block">Contacto y Ubicaciones</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#008C45] mt-1 shrink-0" />
@@ -42,7 +45,7 @@ export function Footer() {
                 </div>
               </div>
               <div className="flex items-center gap-3 mt-4">
-                <Phone className="w-5 h-5 text-[#008C45]" />
+                <WhatsAppIcon className="w-5 h-5 text-[#008C45]" />
                 <p className="font-semibold text-[#FDFBF7]">Pedidos por WhatsApp: 223 504-5882</p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { MousePointerClick, MessageSquare, PackageCheck } from 'lucide-react';
+import { FadeIn } from './FadeIn';
 
 const steps = [
   {
@@ -20,13 +21,14 @@ const steps = [
 
 export function ComoComprar() {
   return (
-    <section id="como-comprar" className="py-24 bg-[#FDFBF7] relative">
+    <section id="como-comprar" className="py-24 bg-[#F4EFE6] relative">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E8E1D3] to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <FadeIn direction="up">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-[#008C45] font-bold tracking-widest uppercase text-sm mb-4">Proceso simple</h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-[#5C4033] mb-6">
+          <h3 className="font-serif text-4xl md:text-5xl font-bold text-[#5C4033] mb-6">
             ¿Cómo realizar tu pedido?
           </h3>
           <p className="text-xl text-[#8B7355] font-light">
@@ -34,6 +36,7 @@ export function ComoComprar() {
             El resto, lo hacemos fácil en 3 simples pasos.
           </p>
         </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {/* Línea conectora solo visible en desktop */}
@@ -42,13 +45,14 @@ export function ComoComprar() {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center border-4 border-[#F4EFE6] shadow-[0_10px_30px_-10px_rgba(0,140,69,0.3)] mb-8 group-hover:border-[#008C45] transition-all duration-500 transform group-hover:-translate-y-2">
+              <FadeIn key={index} direction="up" delay={index * 150}>
+              <div className="relative z-10 flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full bg-[#FDFBF7] flex items-center justify-center border-4 border-[#E8DDD0] shadow-[0_10px_30px_-10px_rgba(0,140,69,0.25)] mb-8 group-hover:border-[#008C45] transition-all duration-500 transform group-hover:-translate-y-2">
                   <Icon className="w-10 h-10 text-[#008C45]" strokeWidth={1.5} />
                 </div>
                 
-                <div className="bg-white px-8 py-6 rounded-2xl shadow-sm border border-[#E8E1D3] group-hover:shadow-md transition-shadow flex-1 flex flex-col justify-center">
-                  <h4 className="text-2xl font-bold text-[#5C4033] mb-4 group-hover:text-[#008C45] transition-colors">
+                <div className="bg-[#FDFBF7] px-8 py-6 rounded-3xl shadow-sm border border-[#E8DDD0] group-hover:shadow-md transition-shadow flex-1 flex flex-col justify-center">
+                  <h4 className="font-serif text-2xl font-bold text-[#5C4033] mb-4 group-hover:text-[#008C45] transition-colors">
                     <span className="text-[#008C45] font-black mr-2 opacity-50 text-xl">{index + 1}.</span>
                     {step.title}
                   </h4>
@@ -57,6 +61,7 @@ export function ComoComprar() {
                   </p>
                 </div>
               </div>
+              </FadeIn>
             );
           })}
         </div>

@@ -7,6 +7,7 @@ import { ComoComprar } from '../components/ComoComprar';
 import { Beneficios } from '../components/Beneficios';
 import { Sucursales } from '../components/Sucursales';
 import { Galeria } from '../components/Galeria';
+import { CTAFinal } from '../components/CTAFinal';
 import { Footer } from '../components/Footer';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 
@@ -22,6 +23,7 @@ export function Home() {
         <ComoComprar />
         <Sucursales />
         <Galeria />
+        <CTAFinal />
       </main>
       <Footer />
       <WhatsAppButton />

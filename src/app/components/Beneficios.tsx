@@ -1,4 +1,5 @@
 import { Award, HeartHandshake, Leaf, Clock } from 'lucide-react';
+import { FadeIn } from './FadeIn';
 
 const benefits = [
   { icon: Award, title: 'Calidad Premium', desc: 'Ingredientes seleccionados' },
@@ -18,13 +19,15 @@ export function Beneficios() {
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
             return (
-              <div key={idx} className="flex flex-col items-center text-center group">
+              <FadeIn key={idx} direction="up" delay={idx * 120}>
+              <div className="flex flex-col items-center text-center group">
                 <div className="bg-white/10 rounded-2xl p-4 mb-4 backdrop-blur-sm group-hover:bg-white/20 transition-all transform group-hover:-translate-y-1">
                   <Icon className="w-8 h-8 text-[#FDFBF7]" strokeWidth={1.5} />
                 </div>
-                <h4 className="text-[#FDFBF7] font-bold text-lg mb-1">{benefit.title}</h4>
+                <h4 className="font-serif text-[#FDFBF7] font-semibold text-lg mb-1">{benefit.title}</h4>
                 <p className="text-[#E8E1D3] text-sm opacity-90 font-light">{benefit.desc}</p>
               </div>
+              </FadeIn>
             );
           })}
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../../assets/f9273fcf9bcbf47e14006f346fe2e50896bc434b.png';
+import logoImg from '../../assets/logo.png';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -18,7 +19,7 @@ export function Header() {
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center">
-              <img src={logoImg} alt="El Cañón Panadería y Confitería" className="h-16 w-auto object-contain drop-shadow-sm" />
+              <img src={logoImg} alt="El Cañón Panadería y Confitería" className="h-24 w-auto object-contain drop-shadow-sm" />
             </a>
           </div>
           
@@ -27,7 +28,7 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-[#5C4033] hover:text-[#008C45] font-semibold transition-colors uppercase text-sm tracking-wider"
+                className="text-[#5C4033] hover:text-[#008C45] font-medium transition-colors duration-200 uppercase text-sm tracking-wider"
               >
                 {item.name}
               </a>
@@ -36,10 +37,10 @@ export function Header() {
 
           <div className="hidden md:flex">
             <a 
-              href="https://wa.me/5492235045882" 
+              href={buildWhatsAppUrl('Hola, quisiera hacer un pedido.')}
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-[#008C45] text-white px-6 py-2 rounded-full font-bold hover:bg-[#006f37] transition-all transform hover:scale-105 shadow-md"
+              className="bg-[#008C45] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#006f37] transition-all duration-300 transform hover:scale-105 shadow-md text-sm"
             >
               Hacer Pedido
             </a>
@@ -77,7 +78,7 @@ export function Header() {
             ))}
             <div className="mt-4 px-3">
               <a 
-                href="https://wa.me/5492235045882" 
+                href={buildWhatsAppUrl('Hola, quisiera hacer un pedido.')}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-[#008C45] text-white px-6 py-3 rounded-full font-bold hover:bg-[#006f37] shadow-sm"
